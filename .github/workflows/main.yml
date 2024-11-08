@@ -16,7 +16,7 @@ jobs:
         uses: actions/upload-artifact@v4.4.3
         with:
           name: Archive debug
-          path: TestProject3/bin/Debug/
+          path: ${{ runner.workspace }}TestProject3/bin/Debug/
   test-release:
     runs-on: ubuntu-latest
     steps:
@@ -32,5 +32,5 @@ jobs:
         uses: actions/upload-artifact@v4.4.3
         with:
           name: Archive release
-          path: TestProject3/bin/Release/
+          path: ${{ runner.workspace }}TestProject3/bin/Release/
 
