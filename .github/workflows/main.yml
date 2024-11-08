@@ -10,12 +10,12 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '6.0.x'
-      - name: Build 
+      - name: Build debug
         run: dotnet build
       - name: Upload a Build Artifact        
         uses: actions/upload-artifact@v4.4.3
         with:
-          name: Archive
+          name: Archive debug
           path: TestProject3/bin/Debug/
   test-release:
     runs-on: ubuntu-latest
@@ -26,11 +26,11 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '6.0.x'
-      - name: Build
+      - name: Build release
         run: dotnet build
       - name: Upload a Build Artifact        
         uses: actions/upload-artifact@v4.4.3
         with:
-          name: Archive
+          name: Archive release
           path: TestProject3/bin/Release/
 
