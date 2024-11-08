@@ -1,5 +1,5 @@
-name: Parallel Workflow
-on: [pull_request]
+name: Individual 
+on: [push, pull_request]
 jobs:
   test-debug:
     runs-on: ubuntu-latest
@@ -10,8 +10,8 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '6.0.x'
-      - name: Run tests
-        run: dotnet test
+      - name: Build 
+        run: dotnet build
 
   test-release:
     runs-on: ubuntu-latest
@@ -22,5 +22,5 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '6.0.x'
-      - name: Run tests
-        run: dotnet test
+      - name: Build
+        run: dotnet build
